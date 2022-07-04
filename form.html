@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Lucas Magnago de Oliveira">
+    <meta name="description" content="E-commerce de componentes para computador.">
+    <meta name="keywords" content="e-commerce, desktop, computador, hardware">
+
+    <link href="./Style/form.css" rel="stylesheet">
+
+    <link rel="shortcut icon" type="image/png" href="./assets/icons/carrinho.png">
+    <title>eBuy</title>
+</head>
+<body>
+    <nav id="navegador">
+        <ul>
+            <li>
+                <a href="#categorias">Avançar para as categorias.</a>
+            </li>
+            <li>
+                <a href="#ofertas">Avançar para as ofertas.</a>
+            </li>
+            <li>
+                <a href="#maisVendidos">Avançar para os mais vendidos.</a>
+            </li>
+            <li>
+                <a href="#lancamentos">Avançar para os lançamentos.</a>
+            </li>
+            <li>
+                <a href="#departamentos">Avançar para os departamentos.</a>
+            </li>
+            <li>
+                <a href="#atendimento">Avançar para o atendimento.</a>
+            </li>
+            <li>
+                <a href="#contato">Avançar para o contato.</a>
+            </li>
+        </ul>
+    </nav>
+    <header>
+        <a href="index.html" id="logo"></a>
+        <div id="search-input">
+            <script async src="https://cse.google.com/cse.js?cx=64bc616e8825e461e">
+            </script>
+            <div class="gcse-search"></div>
+        </div>
+        <a href="form.html" id="login-wrapper">
+            <img src="./assets/icons/user.png" alt="Cadastro" style="width: 25px">
+            <p style="margin-left: 15px;">Login / Cadastro</p>
+        </a>
+        <div id="login-info">
+            <p>Olá, </p>
+        </div>
+    </header>
+    <nav>
+        <ul id="categorias" tabindex="0">
+            <li><a href="./html/Departamentos/processador.html"><h1>Processador</h1></a></li>
+            <li><a href="./html/Departamentos/ram.html"><h1>Memória Ram</h1></a></li>
+            <li><a href="./html/Departamentos/vga.html"><h1>Placa de vídeo</h1></a></li>
+            <li><a href="./html/Departamentos/armazenamento.html"><h1>Armazenamento</h1></a></li>
+            <li><a href="./html/Departamentos/placa-mae.html"><h1>Placa-mãe</h1></a></li>
+            <li><a href="./html/Departamentos/fonte.html"><h1>Fonte</h1></a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="login-section">
+            <h1 class="titulo">Fazer login</h1>
+            <form class="form form-login">
+                <input type="Text" class="input-form" id="login-email" placeholder="Email">
+                <input type="number" class="input-form" id="login-senha" placeholder="Senha (CPF)">
+
+                <p class="erro-hidden erro-login">Erro qualquer</p>
+
+                <button type="submit" class="botao">Entrar</button>
+            </form>
+        </section>
+        <section id="form-section">
+            <h1 class="titulo">Quero me cadastrar</h1>
+            <form class="form form-cadastro">
+                <input type="text" class="input-form nome" placeholder="Nome">
+                <input type="number" class="input-form cpf" placeholder="CPF">
+                <input type="email" class="input-form email" placeholder="E-mail">
+                <input type="number" class="input-form cep" placeholder="CEP" onblur="pesquisacep(this.value)">
+                <input type="text" class="input-form estado" readonly placeholder="Estado">
+                <input type="text" class="input-form cidade" readonly placeholder="Cidade">
+                <input type="text" class="input-form bairro" readonly placeholder="Bairro">
+                <input type="text" class="input-form rua" readonly placeholder="Rua">
+
+                <p class="erro-hidden">Erro qualquer</p>
+
+                <button type="submit" class="botao btn-cadastro">Cadastrar</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <article id="departamentos" style="width: 25%; height: 80%">
+            <h1 tabindex="0">Departamentos</h1>
+            <ul class="footer-ul">
+                <li>
+                    <a href="./html/Departamentos/processador.html">
+                        Processador
+                    </a>
+                </li>
+                <li>
+                    <a href="./html/Departamentos/ram.html">
+                        Memória Ram
+                    </a>
+                </li>
+                <li>
+                    <a href="./html/Departamentos/vga.html">
+                        Placa de vídeo
+                    </a>
+                </li>
+                <li>
+                    <a href="./html/Departamentos/armazenamento.html">
+                        Armazenamento
+                    </a>
+                </li>
+                <li>
+                    <a href="./html/Departamentos/placa-mae.html">
+                        Placa-mãe
+                    </a>
+                </li>
+                <li>
+                    <a href="./html/Departamentos/fonte.html">
+                        Fonte
+                    </a>
+                </li>
+            </ul>
+        </article>
+        <article id="atendimento" style="width: 25%; height: 80%">
+            <h1 tabindex="0">Atendimento</h1>
+            <h2 tabindex="0">Horário de atendimento:</h2>
+            <p>
+                08:00 às 22:00 - Segunda a Sexta, 
+                horário de Brasília
+            </p>
+            <h2 tabindex="0">Endereço: </h2>
+            <p>
+                Rua Rogério Norbim, 19 - Centro
+                Serra/ES - CEP: 29176-432
+            </p>
+        </article>
+        <article id="contato" style="width: 25%; height: 80%">
+            <h1 tabindex="0">Contato</h1>
+            <h2 tabindex="0">Central SAC:</h2>
+            <p>(27) 992616-123</p>
+            <h2 tabindex="0">Email: </h2>
+            <p><a href="mailto:lucasmagnago@ucl.br">lucasmagnago@ucl.br</a></p>
+        </article>
+    </footer>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyDKjqgOxBoSpEaI-aObmvfYGe-6tR6l8ro",
+          authDomain: "ebuy-a0012.firebaseapp.com",
+          projectId: "ebuy-a0012",
+          storageBucket: "ebuy-a0012.appspot.com",
+          messagingSenderId: "913885414124",
+          appId: "1:913885414124:web:043f5e22e8edc6bc1fdbc9",
+          measurementId: "G-LPPHGYPZNC"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+      </script>
+      
+      <script src="./Script/form.js"></script>
+</body>
+</html>

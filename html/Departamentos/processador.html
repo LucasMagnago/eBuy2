@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Lucas Magnago de Oliveira">
+    <meta name="description" content="E-commerce de componentes para computador.">
+    <meta name="keywords" content="e-commerce, desktop, computador, hardware, processador, intel, amd, ryzen, i5, i7, i3">
+
+    <link href="../../Style/style-departamento.css" rel="stylesheet">
+
+    <link rel="shortcut icon" type="image/png" href="../../assets/icons/carrinho.png">
+    <title>eBuy</title>
+</head>
+<body>
+    <nav id="navegador">
+        <ul>
+            <li>
+                <a href="#categorias">Avançar para as categorias.</a>
+            </li>
+            <li>
+                <a href="#produtos">Avançar para os produtos.</a>
+            </li>
+            <li>
+                <a href="#filtro">Avançar para os filtros.</a>
+            </li>
+            <li>
+                <a href="#departamentos">Avançar para os departamentos.</a>
+            </li>
+            <li>
+                <a href="#atendimento">Avançar para o atendimento.</a>
+            </li>
+            <li>
+                <a href="#contato">Avançar para o contato.</a>
+            </li>
+        </ul>
+    </nav>
+    <header>
+        <a href="../../index.html" id="logo"></a>
+        <div id="search-input">
+            <script async src="https://cse.google.com/cse.js?cx=64bc616e8825e461e">
+            </script>
+            <div class="gcse-search"></div>
+        </div>
+        <a href="../../form.html" id="login-wrapper">
+            <img src="../../assets/icons/user.png" alt="Cadastro" style="width: 25px">
+            <p style="margin-left: 15px;">Login / Cadastro</p>
+        </a>
+        <div id="login-info">
+            <p>Olá, </p>
+        </div>
+    </header>
+    <nav>
+        <ul id="categorias" tabindex="0">
+            <li><a href="./processador.html"><h1>Processador</h1></a></li>
+            <li><a href="./ram.html"><h1>Memória Ram</h1></a></li>
+            <li><a href="./vga.html"><h1>Placa de vídeo</h1></a></li>
+            <li><a href="./armazenamento.html"><h1>Armazenamento</h1></a></li>
+            <li><a href="./placa-mae.html"><h1>Placa-mãe</h1></a></li>
+            <li><a href="./fonte.html"><h1>Fonte</h1></a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="categoria">
+            <h1>Processador</h1>
+            <div class="container">
+                <section id="filtro">
+                    <h1>Filtrar por:</h1>
+                    <h2>Marca</h2>
+                    <ul>
+                        <li>
+                            <input type="checkbox">
+                            Intel
+                        </li>
+                        <li>
+                            <input type="checkbox">
+                            Amd
+                        </li>
+                    </ul>
+                        
+                    
+                </section>
+                <section id="produtos">
+                    <a href="../Produtos/ryzen5600g-Amd.html">
+                        <article class="produto grid-Card2">
+                            <img src="../../assets/ryzen5600g-Amd.png" alt="Processador Ryzen 5 5600G" style="width: 60%">
+                            <h2>
+                                Processador AMD Ryzen 5 5600G, 3.9GHz (4.4GHz Max Turbo), AM4, Vídeo Integrado, 6 Núcleos
+                            </h2>
+                            <p>R$ 1.347,90</p>
+                        </article>
+                    </a>
+                    <a href="../Produtos/i512600k-Intel.html">
+                        <article class="produto grid-Card3">
+                            <img src="../../assets/i512600k-Intel.png" alt="Processador Intel Core i5-12600K" style="width: 60%">
+                            <h2>
+                                Processador Intel Core i5-12600K, Cache 20MB, 3.7GHz (4.9GHz Max Turbo), LGA 1700
+                            </h2>
+                            <p>R$ 2.119,90</p>
+                        </article>
+                    </a>
+                </section>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <article id="departamentos" style="width: 25%; height: 80%">
+            <h1 tabindex="0">Departamentos</h1>
+            <ul class="footer-ul">
+                <li>
+                    <a href="./processador.html">
+                        Processador
+                    </a>
+                </li>
+                <li>
+                    <a href="./ram.html">
+                        Memória Ram
+                    </a>
+                </li>
+                <li>
+                    <a href="./vga.html">
+                        Placa de vídeo
+                    </a>
+                </li>
+                <li>
+                    <a href="./armazenamento.html">
+                        Armazenamento
+                    </a>
+                </li>
+                <li>
+                    <a href="./placa-mae.html">
+                        Placa-mãe
+                    </a>
+                </li>
+                <li>
+                    <a href="./fonte.html">
+                        Fonte
+                    </a>
+                </li>
+            </ul>
+        </article>
+        <article id="atendimento" style="width: 25%; height: 80%">
+            <h1 tabindex="0">Atendimento</h1>
+            <h2 tabindex="0">Horário de atendimento:</h2>
+            <p>
+                08:00 às 22:00 - Segunda a Sexta, 
+                horário de Brasília
+            </p>
+            <h2 tabindex="0">Endereço: </h2>
+            <p>
+                Rua Rogério Norbim, 19 - Centro
+                Serra/ES - CEP: 29176-432
+            </p>
+        </article>
+        <article id="contato" style="width: 25%; height: 80%">
+            <h1 tabindex="0">Contato</h1>
+            <h2 tabindex="0">Central SAC:</h2>
+            <p>(27) 992616-123</p>
+            <h2 tabindex="0">Email: </h2>
+            <p><a href="mailto:lucasmagnago@ucl.br">lucasmagnago@ucl.br</a></p>
+        </article>
+    </footer>
+    <script src="../../Script/index.js"></script>
+</body>
+</html>

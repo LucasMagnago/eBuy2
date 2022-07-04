@@ -1,0 +1,254 @@
+:root{
+    --var-bgColorHeader: #14213d;
+    --var--bgColorNav: #013a63;
+    --var--bgColorGeral: #F2F3F4;
+    --var--bgColorCard: #FFFFFF;
+    --var--textColorCard: #0F1111;
+}
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box; 
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    font-family: Poppins, sans-serif;
+    font-size: 0.8vw;
+}
+h1{
+    font-size: 1.2vw;
+}
+h2{
+    font-size: 1vw;
+}
+p{
+    font-size: 0.8vw;
+}
+/* Menu de atalhos para navegação por teclado */
+#navegador{
+    position: absolute;
+    left: -1000px;
+    top: -1000px;
+}
+/* Removendo estilos padrão dos links, botões e listas. */
+a{
+    color: white;
+    text-decoration: none;
+}
+a:hover{
+    color:rgba(255, 255, 255, 0.842);
+}
+button{
+    border: none;
+    background: none;
+}
+ul{
+    list-style-type: none;
+}
+/* ------------------------------------------------------- */
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    height: 15vh;
+    background-color: var(--var-bgColorHeader);
+    /* background-image: url(../assets/logo3.png);
+    background-position: left;
+    background-position-x: 50px;
+    background-repeat: no-repeat;
+    background-size: 75px; */
+}
+#logo{
+    width: 4.5rem;
+    height: 4.5rem;
+    position: relative;
+    left: -15%;
+    background-image: url(../assets/logo3.png);
+    /* background-position: left;
+    background-position-x: 50px; */
+    background-repeat:no-repeat;
+    background-size:cover;
+    /* background-color: red; */
+}
+#search-input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    height:100%; 
+    box-sizing: border-box;
+}
+#login-wrapper{
+    position: relative;
+    right: -15%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+}
+#login-info{
+    position: relative;
+    right: -15%;
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+}
+#categorias{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 80vw;
+    height: 5vh;
+    background-color: var(--var--bgColorNav);
+    font-size: 0.8vw;
+}
+#categorias > li > a > h1:hover{
+    color:rgba(255, 255, 255, 0.842)
+}
+section{
+    width: 80vw;
+    height: 60vh;
+}
+#ofertas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    max-height: 60vh;
+    background-color: var(--var--bgColorGeral);
+    overflow: hidden;
+}
+#maisVendidos{
+    display: grid;
+    grid-template-rows: 2fr 8fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    "grid-Nome grid-Nome grid-Nome grid-Nome grid-Nome grid-Nome"
+    "grid-ButtonVoltar grid-Card1 grid-Card2  grid-Card3 grid-Card4 grid-ButtonAvancar";
+    padding: 10px;
+    text-align: center;
+    background-color: var(--var--bgColorGeral);
+    color: var(--var--textColorCard);
+}
+#lancamentos{
+    display: grid;
+    grid-template-rows: 2fr 8fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    "grid-Nome grid-Nome grid-Nome grid-Nome grid-Nome grid-Nome"
+    "grid-ButtonVoltar grid-Card1 grid-Card2  grid-Card3 grid-Card4 grid-ButtonAvancar";
+    padding: 10px;
+    text-align: center;
+    background-color: var(--var--bgColorGeral);
+    color: var(--var--textColorCard);
+}
+/* Definindo grid area para os elementos das sections mais vendidos e lançamentos */
+.grid-Nome{
+    grid-area: grid-Nome;
+    justify-self: left;
+    align-self:  center;
+}
+.grid-ButtonVoltar{
+    grid-area: grid-ButtonVoltar;
+    justify-self: center;
+    align-self: center;
+}
+.grid-Card1{
+    grid-area: grid-Card1;
+    justify-self: center;
+    align-self: center;
+}
+.grid-Card2{
+    grid-area: grid-Card2;
+    justify-self: center;
+    align-self: center;
+}
+.grid-Card3{
+    grid-area: grid-Card3;
+    justify-self: center;
+    align-self: center;
+}
+.grid-Card4{
+    grid-area: grid-Card4;
+    justify-self: center;
+    align-self: center;
+}
+.grid-ButtonAvancar{
+    grid-area: grid-ButtonAvancar;
+    justify-self: center;
+    align-self: center;
+}
+/* ------------------------------------------------ */
+.produto{
+    width: 15vw;
+    height: 40vh;
+    margin: 10px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: left;
+    text-align: left;
+    background-color: var(--var--bgColorCard);  
+    color: var(--var--textColorCard);
+}
+.produto:hover{
+    transform: scale(1.1);
+}
+.produto > img{
+    max-width: 50%;
+    align-self: center;
+}
+.produto > p{
+    font-size: 1.5vw;
+    font-family: Poppins, sans-serif;
+    font-weight: bold;
+    color: var(--var--textColorCard);
+}
+/* .produto:hover{
+    box-shadow: 7.5px 7.5px rgba(0, 0, 0, 0.247);
+} */
+#cadastro{
+    display: absolute;
+    height: 80vh;
+    background-color: red;
+}
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 80vw;
+    height: 30vh;
+    box-sizing: border-box;
+    background-color: var(--var-bgColorHeader);
+    color: white;
+}
+footer > article > h1{
+    font-size: 1.2vw;
+    margin-bottom: 10px;
+}
+footer > article > h2{
+    font-size: 1.1vw;
+    margin: 7.5px 0px;
+}
+.footer-ul{
+    display: flex;
+    flex-direction: column;
+}
+footer > article > ul> li{
+    margin: 2.5px 0px;
+    font-size: 0.8vw;
+}
