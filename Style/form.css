@@ -161,6 +161,16 @@ main{
     color: red;
     display: flex;
 }
+.erro-hidden-login{
+    font-size: 0.9rem;
+    color: red;
+    display: none;
+}
+.erro-login{
+    font-size: 0.9rem;
+    color: red;
+    display: flex;
+}
 .botao{
     width: 80%;
     height: 3.2rem;

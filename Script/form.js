@@ -10,7 +10,7 @@ let bairro = document.querySelector('.bairro');
 let rua = document.querySelector('.rua');
 let botao = document.querySelector('.btn-cadastro');
 let erro = document.querySelector('.erro-hidden');
-let erroLogin = document.querySelector('.erro-login');
+let erroLogin = document.querySelector('.erro-hidden-login');
 
 fazLogin();
 
@@ -28,17 +28,20 @@ form.addEventListener('submit', function(e){
         document.cookie = "cidade=" + String(cidade.value);
         document.cookie = "bairro=" + String(bairro.value);
         document.cookie = "rua=" + String(rua.value);
+
+        console.log("Cadastrou");
     }
     else{
         e.preventDefault();
+        console.log("Não cadastrou");
     }
 });
 login.addEventListener('submit', function(e){
     let emailLogin = document.querySelector('#login-email').value;
     let senhaLogin = document.querySelector('#login-senha').value;
 
-    let emailCk = '';
-    let senhaCk = '';
+    let emailCk = '!@#$%';
+    let senhaCk = '¨!@#$%';
     let nomeCk = '';
 
     try{
@@ -46,25 +49,30 @@ login.addEventListener('submit', function(e){
         senhaCk = document.cookie.split('; ').find(x => x.startsWith('cpf=')).split('=')[1];
         nomeCk = document.cookie.split('; ').find(x => x.startsWith('nome=')).split('=')[1];
     }
-    finally{
-        erroLogin.classList.remove("erro-hidden");
-        erroLogin.classList.add("erro")
+    catch{
+        erroLogin.classList.remove("erro-hidden-login");
+        erroLogin.classList.add("erro-login")
         erroLogin.innerHTML = "Email/Senha incorretos";
 
         e.preventDefault();
     }
 
-    erroLogin.classList.remove("erro");
-    erroLogin.classList.add("erro-hidden")
+    erroLogin.classList.remove("erro-login");
+    erroLogin.classList.add("erro-hidden-login")
 
     if(String(emailLogin).toLowerCase() == String(emailCk).toLowerCase() && String(senhaLogin) == String(senhaCk).toLowerCase()){
         fazLogin();
-        alert(`${nomeCk} seja bem-vindo!`)
+
+        console.log("Fez login");
+
+        alert(`${nomeCk} seja bem-vindo!`);
     }
     else{
-        erroLogin.classList.remove("erro-hidden");
-        erroLogin.classList.add("erro")
+        erroLogin.classList.remove("erro-hidden-login");
+        erroLogin.classList.add("erro-login")
         erroLogin.innerHTML = "Email/Senha incorretos";
+
+        console.log("Não fez login");
 
         e.preventDefault();
     }
@@ -74,8 +82,9 @@ function verificarVazio(){
     let _cpf = String(cpf.value);
     let _email = email.value;
     let _cep = String(cep.value);
+    let _estado = String(estado.value);
 
-    if(_nome == '' || _cpf == '' || _email == '' || _cep == ''){
+    if(_nome == '' || _cpf == '' || _email == '' || _cep == '' || _estado == ''){
         erro.innerHTML = "Os campos não podem ficar vazios";
         erro.classList.remove("erro-hidden");
         erro.classList.add("erro");
@@ -123,7 +132,17 @@ function TestaCPF(strCPF) {
     var Soma;
     var Resto;
     Soma = 0;
+    
     if (strCPF == "00000000000") return false;
+    if (strCPF == "11111111111") return false;
+    if (strCPF == "22222222222") return false;
+    if (strCPF == "33333333333") return false;
+    if (strCPF == "44444444444") return false;
+    if (strCPF == "55555555555") return false;
+    if (strCPF == "66666666666") return false;
+    if (strCPF == "77777777777") return false;
+    if (strCPF == "88888888888") return false;
+    if (strCPF == "99999999999") return false;
 
     for (i=1; i<=9; i++) Soma = Soma + parseInt(strCPF.substring(i-1, i)) * (11 - i);
     Resto = (Soma * 10) % 11;
@@ -205,15 +224,20 @@ function pesquisacep(valor) {
     }
 }
 function fazLogin(){
-    let cadastroElogin = document.querySelector('#login-wrapper');
-    let statusLogin = document.querySelector('#login-info');
-    
-    let cookie = document.cookie;
-    let nome = cookie.split('; ').find(x => x.startsWith('nome=')).split('=')[1];
-    
-    if(nome!=null){
-        cadastroElogin.style = 'display: none';
-        statusLogin.innerHTML = `Olá, ${nome}`;
-        statusLogin.style = 'display: flex';
+    try{
+        let cadastroElogin = document.querySelector('#login-wrapper');
+        let statusLogin = document.querySelector('#login-info');
+        
+        let cookie = document.cookie;
+        let nome = cookie.split('; ').find(x => x.startsWith('nome=')).split('=')[1];
+        
+        if(nome!=null){
+            cadastroElogin.style = 'display: none';
+            statusLogin.innerHTML = `Olá, ${nome}`;
+            statusLogin.style = 'display: flex';
+        }
+    }
+    catch{
+        return;
     }
 }
